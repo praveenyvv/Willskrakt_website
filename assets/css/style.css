@@ -4,3 +4,56 @@
 .animate__animated{will-change:transform,opacity}
 img{max-width:100%;height:auto}
 *{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+
+/* ===== NEW SERVICE NAV PILL & POPPING BADGE ===== */
+.ul-nav-new-pill {
+    position: relative;
+    display: inline-flex !important;
+    align-items: center;
+    gap: 6px;
+    font-weight: 500;
+}
+.ul-header-nav > a.ul-nav-new-pill {
+    border: 1px solid rgba(255, 30, 86, 0.45);
+    background: linear-gradient(135deg, rgba(255, 30, 86, 0.08), rgba(115, 27, 183, 0.08));
+    color: var(--black);
+}
+.ul-header-nav > a.ul-nav-new-pill:hover,
+.ul-header-nav > a.ul-nav-new-pill.active {
+    background: linear-gradient(105deg, var(--ul-primary) 0%, var(--ul-secondary) 100%) !important;
+    border-color: transparent !important;
+    color: var(--white) !important;
+}
+.ul-header-nav > a.ul-nav-new-pill:hover .ul-nav-new-badge,
+.ul-header-nav > a.ul-nav-new-pill.active .ul-nav-new-badge {
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.9);
+}
+.ul-nav-new-badge {
+    background: linear-gradient(135deg, #FF1E56, #FF6B3D);
+    color: #ffffff !important;
+    font-size: 10px;
+    font-weight: 800;
+    line-height: 1;
+    letter-spacing: 0.6px;
+    padding: 3px 6px;
+    border-radius: 999px;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(255, 30, 86, 0.8);
+    animation: pulseBadge 1.8s infinite ease-in-out;
+    text-transform: uppercase;
+}
+@keyframes pulseBadge {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 30, 86, 0.7);
+    }
+    70% {
+        transform: scale(1.08);
+        box-shadow: 0 0 0 7px rgba(255, 30, 86, 0);
+    }
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(255, 30, 86, 0);
+    }
+}
